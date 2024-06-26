@@ -16,8 +16,12 @@ class Main {
         String result;
         boolean isRoman;
         String[] operands = input.split("[\\-+*/]");
-        if (operands.length != 2) throw new Exception("Должно быть два числа");
+        if ((!(input).contains("+")) && (!(input).contains("-")) && (!(input).contains("*")) &&  (!(input).contains("/")))
+        throw new Exception("Неверная математическая операция");
+
+         if (operands.length != 2) throw new Exception("Должно быть два числа");
         oper = detectSymbol(input);
+
         if (oper == null) throw new Exception("Неверная математическая операция");
         if (Roman.Rom(operands[0]) && Roman.Rom(operands[1])) {
             num1 = Roman.DofromRomToArabic(operands[0]);
